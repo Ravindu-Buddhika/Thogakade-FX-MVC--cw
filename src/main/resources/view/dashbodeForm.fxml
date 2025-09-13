@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="364.0" prefWidth="602.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.dashbode.dashbodeFomeController">
+   <children>
+      <ImageView fitHeight="194.0" fitWidth="192.0" layoutX="205.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logoThogakade(light).jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnInventory" layoutX="95.0" layoutY="269.0" mnemonicParsing="false" onAction="#clickInventory" prefHeight="29.0" prefWidth="114.0" style="-fx-background-color: black;" text="Inventory" textFill="WHITE">
+         <font>
+            <Font name="Tahoma" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCheckOrders" layoutX="244.0" layoutY="269.0" mnemonicParsing="false" onAction="#clickCheckOrders" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: black;" text="Check Orders" textFill="WHITE">
+         <font>
+            <Font name="Tahoma" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCustomers" layoutX="394.0" layoutY="269.0" mnemonicParsing="false" onAction="#clickCustomers" prefHeight="25.0" prefWidth="114.0" style="-fx-background-color: black;" text="Customers" textFill="WHITE">
+         <font>
+            <Font name="Tahoma" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnPlaceOrder" layoutX="95.0" layoutY="304.0" mnemonicParsing="false" onAction="#clickPlaceOrder" prefHeight="29.0" prefWidth="413.0" style="-fx-background-color: black;" text="Place Order" textFill="#f2f2f2">
+         <font>
+            <Font name="Tahoma" size="15.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="173.0" layoutX="14.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="28.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="216.0" layoutX="42.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="155.0" layoutX="56.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="200.0" layoutX="588.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="173.0" layoutX="574.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="192.0" layoutX="560.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="216.0" layoutX="546.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="155.0" layoutX="532.0" stroke="BLACK" strokeType="INSIDE" width="14.0" />
+   </children>
+</AnchorPane>
