@@ -1,7 +1,5 @@
 package Controller.customerViewController;
 
-import Controller.itemViewController.ItemViewController;
-import Controller.itemViewController.ItemViewService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,14 +8,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import modle.Item;
+import modle.Customer;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CustomerViewFormController implements Initializable {
-    ObservableList<Item> item= FXCollections.observableArrayList();
-    ItemViewService itemViewService=new ItemViewController();
+    ObservableList<Customer> customers= FXCollections.observableArrayList();
+    CustomerViewService customerViewService=new CustomerViewController();
 
 
     @FXML
@@ -45,7 +43,7 @@ public class CustomerViewFormController implements Initializable {
     private TableColumn<?, ?> colQTY;
 
     @FXML
-    private TableView<Item> tblItems;
+    private TableView<Customer> tblItems;
 
     @FXML
     private TextArea txtItemDescription;
@@ -67,38 +65,38 @@ public class CustomerViewFormController implements Initializable {
 
     @FXML
     void clickAdd(ActionEvent event) {
-        Item item = new Item(
+        Customer customer = new Customer(
                 txtItemID.getText(),
                 txtItemName.getText(),
                 txtItemDescription.getText(),
-                Double.parseDouble(txtItemPrice.getText()),
-                Integer.parseInt(txtItemQuantityOnHand.getText())
+                txtItemPrice.getText(),
+                txtItemQuantityOnHand.getText()
         );
 
-        itemViewService.addItems(item);
-        loadItem();
+        customerViewService.addCustomer(customer);
+        loadCustomer();
         clearFields();
     }
 
     @FXML
     void clickDelete(ActionEvent event) {
-        itemViewService.deleteItems(txtItemID.getText());
-        loadItem();
+        customerViewService.deleteCustomer(txtItemID.getText());
+        loadCustomer();
         clearFields();
     }
 
     @FXML
     void clickUpdate(ActionEvent event) {
-        Item item = new Item(
+        Customer customer = new Customer(
                 txtItemID.getText(),
                 txtItemName.getText(),
                 txtItemDescription.getText(),
-                Double.parseDouble(txtItemPrice.getText()),
-                Integer.parseInt(txtItemQuantityOnHand.getText())
+                txtItemPrice.getText(),
+                txtItemQuantityOnHand.getText()
         );
 
-        itemViewService.upadateItems(item);
-        loadItem();
+        customerViewService.upadateCustomer(customer);
+        loadCustomer();
         clearFields();
 
     }
@@ -112,28 +110,28 @@ public class CustomerViewFormController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         colID.setCellValueFactory(new PropertyValueFactory<>("id"));
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
-        colDis.setCellValueFactory(new PropertyValueFactory<>("discription"));
-        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        colQTY.setCellValueFactory(new PropertyValueFactory<>("stock"));
+        colDis.setCellValueFactory(new PropertyValueFactory<>("address"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colQTY.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
-        loadItem();
+        loadCustomer();
 
         tblItems.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 txtItemID.setText(newVal.getId());
                 txtItemName.setText(newVal.getName());
-                txtItemDescription.setText(newVal.getDiscription());
-                txtItemPrice.setText(String.valueOf(newVal.getPrice()));
-                txtItemQuantityOnHand.setText(String.valueOf(newVal.getStock()));
+                txtItemDescription.setText(newVal.getAddress());
+                txtItemPrice.setText(String.valueOf(newVal.getEmail()));
+                txtItemQuantityOnHand.setText(String.valueOf(newVal.getPhone()));
             }
         });
 
     }
 
-    private void loadItem() {
-        item.clear();
-        item= itemViewService.getAllItemDetails();
-        tblItems.setItems(item);
+    private void loadCustomer() {
+        customers.clear();
+        customers= customerViewService.getAllCustomers();
+        tblItems.setItems(customers);
     }
 
     public void clearFields() {

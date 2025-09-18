@@ -25,15 +25,30 @@ public class dashbodeFomeController {
 
     Stage customers=new Stage();
     Stage items=new Stage();
+    Stage addOder=new Stage();
+    Stage viewOrder=new Stage();
+
 
     @FXML
     void clickCheckOrders(ActionEvent event) {
-        //customers.setScene();
-
+        try {
+            viewOrder.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/OderViewForm.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        viewOrder.setResizable(false);
+        viewOrder.show();
     }
 
     @FXML
     void clickCustomers(ActionEvent event) {
+        try {
+            customers.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/customersView.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        customers.setResizable(false);
+        customers.show();
 
     }
 
@@ -50,7 +65,13 @@ public class dashbodeFomeController {
 
     @FXML
     void clickPlaceOrder(ActionEvent event) {
-
+        try {
+            addOder.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/AddOderForm.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        addOder.setResizable(false);
+        addOder.show();
     }
 
 }

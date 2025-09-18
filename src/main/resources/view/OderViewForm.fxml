@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="396.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.OderViewController.OderViewFormController">
+   <children>
+      <TableView fx:id="tblItem" layoutX="383.0" layoutY="87.0" prefHeight="200.0" prefWidth="300.0">
+        <columns>
+          <TableColumn fx:id="colItemItemID" prefWidth="75.0" text="Item" />
+          <TableColumn fx:id="colItemQTY" prefWidth="75.0" text="QTY" />
+            <TableColumn fx:id="colItemDis" prefWidth="75.0" text="Discount" />
+            <TableColumn fx:id="colItemPrice" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblOrder" layoutX="51.0" layoutY="87.0" prefHeight="200.0" prefWidth="300.0">
+         <columns>
+            <TableColumn fx:id="colOderOderID" prefWidth="75.0" text="Oder ID" />
+            <TableColumn fx:id="colOderCustomerID" prefWidth="75.0" text="Customer ID" />
+            <TableColumn fx:id="colOderDate" prefWidth="75.0" text="Date" />
+            <TableColumn fx:id="colOderTotal" prefWidth="75.0" text="Total" />
+         </columns>
+      </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0a0a0a" height="53.0" stroke="BLACK" strokeType="INSIDE" width="725.0" />
+      <TableView fx:id="tblCustomer" layoutX="53.0" layoutY="318.0" prefHeight="53.0" prefWidth="627.0">
+        <columns>
+          <TableColumn fx:id="colCutsCutsID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colCustName" prefWidth="125.0" text="Name" />
+            <TableColumn fx:id="colCutsAddress" prefWidth="170.0" text="Address" />
+            <TableColumn fx:id="colCustEmail" minWidth="0.0" prefWidth="137.0" text="Email" />
+            <TableColumn fx:id="colCutsPhone" prefWidth="121.0" text="Phone" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="53.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logoThogakade(dark).jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

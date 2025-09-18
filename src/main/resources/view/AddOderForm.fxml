@@ -1,14 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controller.OderViewController.AddOderFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="655.0" prefWidth="1021.0" style="-fx-background-color: #0a0a0a;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddOderFormController.AddOderFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#363636" height="648.0" layoutX="417.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" width="603.0" />
+      <TextField fx:id="txtCustomerEmail" layoutX="181.0" layoutY="166.0" />
+      <TextField fx:id="txtContactNumber" layoutX="181.0" layoutY="71.0" onKeyReleased="#searchCustomer" />
+      <TextField fx:id="txtCustomerName" layoutX="181.0" layoutY="102.0" />
+      <TextField fx:id="txtCustomerAddress" layoutX="181.0" layoutY="134.0" />
+      <Spinner fx:id="txtItemQTY" layoutX="917.0" layoutY="435.0" prefHeight="25.0" prefWidth="73.0" />
+      <TableView fx:id="tblItem" layoutX="435.0" layoutY="91.0" prefHeight="261.0" prefWidth="553.0">
+        <columns>
+          <TableColumn fx:id="colItemID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colItemName" prefWidth="113.0" text="Name" />
+            <TableColumn fx:id="coltemDiscription" prefWidth="208.0" text="Description" />
+            <TableColumn fx:id="colItemPrice" prefWidth="94.0" text="Price" />
+            <TableColumn fx:id="colItemStock" prefWidth="62.0" text="Stock" />
+            <TableColumn prefWidth="75.0" text="ID" />
+            <TableColumn prefWidth="75.0" text="ID" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnClear" layoutX="930.0" layoutY="565.0" mnemonicParsing="false" onAction="#clearBtnClicked" prefHeight="25.0" prefWidth="51.0" text="Clear" />
+      <TableView fx:id="tblCart" layoutX="35.0" layoutY="285.0" prefHeight="200.0" prefWidth="367.0">
+        <columns>
+          <TableColumn fx:id="colCartID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colCartName" prefWidth="105.0" text="Name" />
+            <TableColumn fx:id="colCartQTY" prefWidth="43.0" text="QTY" />
+            <TableColumn fx:id="colCartDis" prefWidth="45.0" text="Dis" />
+            <TableColumn fx:id="colCartPrice" prefWidth="98.0" text="Price" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSearItem" layoutX="435.0" layoutY="66.0" onKeyReleased="#SearchItem" prefHeight="25.0" prefWidth="553.0" />
+      <TextField fx:id="txtItemID" layoutX="843.0" layoutY="372.0" />
+      <Label layoutX="46.0" layoutY="75.0" text="Contact Number" textFill="#fcfcfc" />
+      <Label layoutX="46.0" layoutY="106.0" text="Customer Name" textFill="#fcfcfc" />
+      <Label layoutX="46.0" layoutY="138.0" text="Address" textFill="#fcfcfc" />
+      <Label layoutX="46.0" layoutY="170.0" text="Email" textFill="#fcfcfc" />
+      <TextField fx:id="txtCustomerID" layoutX="181.0" layoutY="197.0" promptText="C" text="C" />
+      <Label layoutX="46.0" layoutY="201.0" text="Cusrimer ID" textFill="#fcfcfc" />
+      <TextField fx:id="txtItemName" layoutX="843.0" layoutY="404.0" />
+      <Button fx:id="btnAdd" layoutX="803.0" layoutY="565.0" mnemonicParsing="false" onAction="#addBtnClicked" prefHeight="25.0" prefWidth="51.0" text="Add" />
+      <TextField fx:id="txtDiscount" layoutX="843.0" layoutY="472.0" text="0" />
+      <TextField fx:id="txtTotal" layoutX="305.0" layoutY="485.0" prefHeight="25.0" prefWidth="97.0" />
+      <Button fx:id="btDel" layoutX="867.0" layoutY="565.0" mnemonicParsing="false" onAction="#clikedBtnDel" text="Delete" />
+      <TextField fx:id="txtOderID" layoutX="305.0" layoutY="260.0" prefHeight="25.0" prefWidth="97.0" />
+      <Label layoutX="694.0" layoutY="377.0" text="Item ID" textFill="#fcfcfc" />
+      <Label layoutX="694.0" layoutY="408.0" text="Item Name" textFill="#fcfcfc" />
+      <Label layoutX="694.0" layoutY="439.0" text="Item Quantity" textFill="#fcfcfc" />
+      <Label layoutX="697.0" layoutY="477.0" text="Discount" textFill="#fcfcfc" />
+      <TextField fx:id="txtItemPrice" layoutX="843.0" layoutY="510.0" />
+      <Label layoutX="694.0" layoutY="514.0" text="Item Price" textFill="#fcfcfc" />
+      <Button fx:id="btnCheckOut" layoutX="307.0" layoutY="565.0" mnemonicParsing="false" onAction="#clickedCheckOut" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #6fd01b;" text="Check Out" />
+      <Button fx:id="btnDone" layoutX="236.0" layoutY="565.0" mnemonicParsing="false" onAction="#clickedDone" style="-fx-background-color: #5b5b5b;" text="Done" textFill="WHITE" />
+      <ImageView fitHeight="150.0" fitWidth="201.0" layoutY="503.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logoThogakade(dark).jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnAddCustomer" layoutX="347.0" layoutY="71.0" mnemonicParsing="false" onAction="#AddCustomer" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: #5b5b5b;" text="Add" textFill="#eeeeee" />
+   </children>
 </AnchorPane>

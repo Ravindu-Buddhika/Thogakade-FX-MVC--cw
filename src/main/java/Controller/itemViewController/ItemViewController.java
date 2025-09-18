@@ -42,6 +42,7 @@ public class ItemViewController implements ItemViewService {
             preparedStatement.setDouble(1,item.getPrice());
             preparedStatement.setInt(2,item.getStock());
             preparedStatement.setString(3,item.getId());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

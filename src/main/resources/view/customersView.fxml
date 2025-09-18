@@ -14,14 +14,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="548.0" prefWidth="974.0" style="-fx-background-color: #070707;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.itemViewController.ItemViewFormController">
+<AnchorPane prefHeight="548.0" prefWidth="974.0" style="-fx-background-color: #070707;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.customerViewController.CustomerViewFormController">
     <children>
         <ImageView fitHeight="70.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../img/logoThogakade(dark).jpg" />
             </image>
         </ImageView>
-        <Label layoutX="70.0" prefHeight="70.0" prefWidth="173.0" text="Inventory" textFill="WHITE">
+        <Label layoutX="70.0" prefHeight="70.0" prefWidth="191.0" text="Customers" textFill="WHITE">
             <font>
                 <Font name="Arial Black" size="32.0" />
             </font>
@@ -32,9 +32,9 @@
                     <columns>
                         <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="colName" prefWidth="171.0" text="Name" />
-                        <TableColumn fx:id="colDis" prefWidth="228.0" text="Discription" />
-                        <TableColumn fx:id="colPrice" prefWidth="103.0" text="Price" />
-                        <TableColumn fx:id="colQTY" prefWidth="66.0" text="Stock" />
+                        <TableColumn fx:id="colDis" prefWidth="172.0" text="Address" />
+                        <TableColumn fx:id="colPrice" prefWidth="112.0" text="Email" />
+                        <TableColumn fx:id="colQTY" prefWidth="113.0" text="Phone" />
                     </columns>
                 </TableView>
                 <Label layoutX="36.0" layoutY="73.0" />
@@ -62,7 +62,7 @@
                         </Lighting>
                     </effect>
                 </TextField>
-                <Label layoutX="36.0" layoutY="106.0" text="Item Name">
+                <Label layoutX="36.0" layoutY="106.0" text="Name">
                     <font>
                         <Font name="Arial Black" size="12.0" />
                     </font>
@@ -79,12 +79,12 @@
                         </Lighting>
                     </effect>
                 </TextField>
-                <Label layoutX="36.0" layoutY="73.0" text="Item ID">
+                <Label layoutX="36.0" layoutY="73.0" text="Customer ID">
                     <font>
                         <Font name="Arial Black" size="12.0" />
                     </font>
                 </Label>
-                <Label layoutX="36.0" layoutY="134.0" text="Description">
+                <Label layoutX="36.0" layoutY="134.0" text="Address">
                     <font>
                         <Font name="Arial Black" size="12.0" />
                     </font>
@@ -101,7 +101,7 @@
                         </Lighting>
                     </effect>
                 </TextArea>
-                <Label layoutX="36.0" layoutY="261.0" text="Price">
+                <Label layoutX="36.0" layoutY="261.0" text="Email">
                     <font>
                         <Font name="Arial Black" size="12.0" />
                     </font>
@@ -118,7 +118,7 @@
                         </Lighting>
                     </effect>
                 </TextField>
-                <Label layoutX="36.0" layoutY="297.0" text="Quantity on hand">
+                <Label layoutX="36.0" layoutY="297.0" text="Phone Number">
                     <font>
                         <Font name="Arial Black" size="12.0" />
                     </font>

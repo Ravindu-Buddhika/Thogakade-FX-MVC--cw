@@ -1,7 +1,13 @@
 package modle;
 
-import java.time.LocalDate;
+import lombok.*;
 
+import java.time.LocalDate;
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 public class Order {
     private String orderId;
     private String customerId;
