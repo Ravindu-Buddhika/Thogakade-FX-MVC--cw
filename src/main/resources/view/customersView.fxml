@@ -32,8 +32,8 @@
                     <columns>
                         <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
                         <TableColumn fx:id="colName" prefWidth="171.0" text="Name" />
-                        <TableColumn fx:id="colDis" prefWidth="172.0" text="Address" />
-                        <TableColumn fx:id="colPrice" prefWidth="112.0" text="Email" />
+                        <TableColumn fx:id="colDis" prefWidth="145.0" text="Address" />
+                        <TableColumn fx:id="colPrice" prefWidth="139.0" text="Email" />
                         <TableColumn fx:id="colQTY" prefWidth="113.0" text="Phone" />
                     </columns>
                 </TableView>
